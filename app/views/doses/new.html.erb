@@ -1,0 +1,31 @@
+<h1>Add a new dose for <%= @cocktail.name %></h1>
+
+
+<%= simple_form_for [@cocktail, @dose] do |f| %>
+  <% if @restaurant.errors.any? %>
+    <div class="errors-container">
+      <ul>
+        <% @restaurant.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+ <% end %>
+  <%= f.input :description %>
+  <%= f.association :ingredient %>
+  <%= f.submit "add dose", class: "btn btn-primary"%>
+
+<% end %>
+
+<%= link_to "back", cocktails_path %>
+
+ if @restaurant.errors.any? %>
+    <div class="errors-container">
+      <ul>
+        <% @restaurant.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
